@@ -942,3 +942,10 @@ VALUES
     (1, 7, -1),
     (1, 8, -3),
     (1, 1, -5);
+
+
+CREATE VIEW valid_vote AS
+SELECT vote.id, vote.submission_id, vote.user_id, vote.value
+FROM vote
+INNER JOIN submission on submission.id=vote.submission_id
+WHERE missed_deadline=0 or (missed_deadline=1 and value < 0);
