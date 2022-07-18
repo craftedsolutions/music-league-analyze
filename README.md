@@ -1,8 +1,12 @@
+## Music League Data Analysis
+
+#### Getting Started
+
+- Load the database: `sqlite3 MusicLeage.db < db_seed.sql`
+- Interact w/ the database: `sqlite3 MusicLeage.db`
 
 
-Load the database: `sqlite3 MusicLeage.db < db_seed.sql`
-
-Interact w/ the database: `sqlite3 MusicLeage.db`
+#### Useful Queries
 
 Results per submission:
 ```
@@ -46,7 +50,7 @@ inner join vote on vote.submission_id=submission.id
 where name='Jeremy Gustine';
 ```
 
-Jeremy's BFFs:
+Jeremy's Friends and Enemies:
 ```
 select user.name, sum(value) as total_votes FROM
 (
@@ -61,10 +65,10 @@ order by total_votes desc;
 ```
 
 
+#### TODO
 
-Best friends (each person should have one):
-- for each person, get sorted list of the votes for them
+- query that generates BFF for each person
+- query that generates greatest enemy for each person
+- get genre data from spotify and search for correlations
 
-
-Enemies (each person should have one):
 
