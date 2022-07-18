@@ -19,3 +19,15 @@ INNER JOIN submission on submission.id=vote.submission_id
 WHERE missed_deadline=0 or (missed_deadline=1 and value < 0);
 ```
 
+End results:
+```
+SELECT user_id, name, SUM(submission_score) FROM
+(
+	SELECT submission.user_id, artist, title, SUM(value) as submission_score
+	FROM submission
+	INNER JOIN valid_vote on submission.id=valid_vote.submission_id
+	GROUP BY submission_id
+) AS temp INNER JOIN user on user.id=temp.user_id
+GROUP BY user_id;
+```
+
