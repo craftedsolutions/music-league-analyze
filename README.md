@@ -31,3 +31,40 @@ SELECT user_id, name, SUM(submission_score) FROM
 GROUP BY user_id;
 ```
 
+All of Jeremy's submissions:
+```
+select * from submission
+inner join user on user.id=submission.user_id
+where name='Jeremy Gustine';
+```
+
+All votes for Jeremy's songs:
+```
+select * from submission
+inner join user on user.id=submission.user_id
+inner join vote on vote.submission_id=submission.id
+where name='Jeremy Gustine';
+```
+
+Jeremy's BFFs:
+```
+select user.name, sum(value) as total_votes FROM
+(
+	select vote.user_id as voter_id, * from submission
+	inner join user on user.id=submission.user_id
+	inner join vote on vote.submission_id=submission.id
+	where name='Jeremy Gustine'
+)
+inner join user on voter_id=user.id
+GROUP BY voter_id
+order by total_votes desc;
+```
+
+
+
+Best friends (each person should have one):
+- for each person, get sorted list of the votes for them
+
+
+Enemies (each person should have one):
+
