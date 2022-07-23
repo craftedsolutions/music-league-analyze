@@ -82,10 +82,16 @@ select week, name, artist, title, missed_deadline, voter_name, value from
 
 ### Python Analysis Scripts
 
-##### Install dependencies
+##### Install all dependencies
 
 ```
 pipenv install
+```
+
+##### Add a dependency
+
+```
+pipenv install <package>
 ```
 
 ##### Activate the virtual environment
