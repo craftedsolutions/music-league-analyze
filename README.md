@@ -1,12 +1,12 @@
-## Music League Data Analysis
+# Music League Data Analysis
 
-#### Getting Started
+### Getting Started
 
 - Load the database: `sqlite3 MusicLeage.db < db_seed.sql`
 - Interact w/ the database: `sqlite3 MusicLeage.db`
 
 
-#### Useful Queries
+### Useful Queries
 
 Results per submission:
 ```
@@ -64,11 +64,32 @@ GROUP BY voter_id
 order by total_votes desc;
 ```
 
+Good 2d view of all the joined user, submission, vote data:
+```
+select week, name, artist, title, missed_deadline, voter_name, value from 
+(
+	select submission.user_id as submitter_id, week, artist, title, missed_deadline, name as voter_name, submission_id, value from vote
+	inner join user on vote.user_id=user.id
+	inner join submission on vote.submission_id=submission.id
+) inner join user on user.id=submitter_id order by week asc;
+```
 
-#### TODO
+### TODO
 
 - query that generates BFF for each person
 - query that generates greatest enemy for each person
 - get genre data from spotify and search for correlations
 
+### Python Analysis Scripts
 
+##### Install dependencies
+
+```
+pipenv install
+```
+
+##### Activate the virtual environment
+
+```
+pipenv shell
+```
