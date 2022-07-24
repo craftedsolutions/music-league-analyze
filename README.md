@@ -66,9 +66,9 @@ order by total_votes desc;
 
 Good 2d view of all the joined user, submission, vote data:
 ```
-select week, name, artist, title, missed_deadline, voter_name, value from 
+select week, submitter_id, name, artist, title, missed_deadline, voter_id, voter_name, value as num_votes from 
 (
-	select submission.user_id as submitter_id, week, artist, title, missed_deadline, name as voter_name, submission_id, value from vote
+	select submission.user_id as submitter_id, week, artist, title, missed_deadline, vote.user_id as voter_id, name as voter_name, submission_id, value from vote
 	inner join user on vote.user_id=user.id
 	inner join submission on vote.submission_id=submission.id
 ) inner join user on user.id=submitter_id order by week asc;
