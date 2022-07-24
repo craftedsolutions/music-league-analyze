@@ -86,12 +86,27 @@ SELECT week, SUM(votes) as votes_in_week, user_id FROM
 ORDER BY week, votes_in_week desc, user_id;
 ```
 
+Jeremy's cumulative score through the weeks:
+```
+SELECT *, sum(votes_in_week) OVER (ORDER BY week) AS running_total
+FROM weekly_vote where user_id=6;
+```
+
+Cumulative ranking through tournament:
+```
+-- https://dba.stackexchange.com/a/282963
+SELECT week, name, votes_in_week, SUM(votes_in_week) 
+OVER (PARTITION BY user_id ORDER BY user_id ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) AS running_score 
+FROM weekly_vote
+ORDER BY week, running_score desc;
+```
+
 ### TODO
 
 - query that generates BFF for each person
 - query that generates greatest enemy for each person
 - get genre data from spotify and search for correlations
-- how to visualize leaders over time? (bump chart)
+- how to visualize leaders over time? (bump chart) https://stackoverflow.com/questions/68095438/how-to-make-a-bump-chart
 
 ### Python Analysis Scripts
 

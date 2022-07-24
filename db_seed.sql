@@ -949,3 +949,14 @@ SELECT vote.id, vote.submission_id, vote.user_id, vote.value
 FROM vote
 INNER JOIN submission on submission.id=vote.submission_id
 WHERE missed_deadline=0 or (missed_deadline=1 and value < 0);
+
+CREATE VIEW weekly_vote AS
+SELECT week, SUM(votes) as votes_in_week, user_id, name FROM
+(
+	SELECT submission.user_id, name, week, artist, title, submission_id, SUM(value) as votes
+	FROM submission
+	INNER JOIN valid_vote on submission.id=valid_vote.submission_id
+	INNER JOIN user on user.id=submission.user_id
+	GROUP BY submission_id
+) GROUP BY user_id, week
+ORDER BY week, votes_in_week desc, user_id;
