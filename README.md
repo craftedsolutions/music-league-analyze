@@ -74,11 +74,24 @@ select week, submitter_id, name, artist, title, missed_deadline, voter_id, voter
 ) inner join user on user.id=submitter_id order by week asc;
 ```
 
+Votes per user per week:
+```
+SELECT week, SUM(votes) as votes_in_week, user_id FROM
+(
+    SELECT submission.user_id, week, artist, title, submission_id, SUM(value) as votes
+    FROM submission
+    INNER JOIN valid_vote on submission.id=valid_vote.submission_id
+    GROUP BY submission_id
+) GROUP BY user_id, week
+ORDER BY week, votes_in_week desc, user_id;
+```
+
 ### TODO
 
 - query that generates BFF for each person
 - query that generates greatest enemy for each person
 - get genre data from spotify and search for correlations
+- how to visualize leaders over time? (bump chart)
 
 ### Python Analysis Scripts
 
