@@ -950,6 +950,127 @@ FROM vote
 INNER JOIN submission on submission.id=vote.submission_id
 WHERE missed_deadline=0 or (missed_deadline=1 and value < 0);
 
+CREATE TABLE weekly_vote_default (
+    id INTEGER PRIMARY KEY,
+    week INTEGER NOT NULL,
+    votes_in_week INTEGER NOT NULL,
+    user_id INTEGER NOT NULL,
+    name TEXT NOT NULL
+);
+-- TODO: this should be able to be done better with a for loop
+INSERT INTO weekly_vote_default (week, votes_in_week, user_id, name)
+VALUES
+    (1, 0, 1, 'Cole Capsalis'),
+    (1, 0, 2, 'Chip M'),
+    (1, 0, 3, 'kseniya'),
+    (1, 0, 4, 'CharTheLatte'),
+    (1, 0, 5, 'TJ Bowen'),
+    (1, 0, 6, 'Jeremy Gustine'),
+    (1, 0, 7, 'Aaron Knoll'),
+    (1, 0, 8, 'Adam Oliver'),
+    (1, 0, 9, 'tedpoatsy'),
+    (1, 0, 10, 'rtrunck'),
+    (1, 0, 11, 'Laura Poatsy'),
+    (2, 0, 1, 'Cole Capsalis'),
+    (2, 0, 2, 'Chip M'),
+    (2, 0, 3, 'kseniya'),
+    (2, 0, 4, 'CharTheLatte'),
+    (2, 0, 5, 'TJ Bowen'),
+    (2, 0, 6, 'Jeremy Gustine'),
+    (2, 0, 7, 'Aaron Knoll'),
+    (2, 0, 8, 'Adam Oliver'),
+    (2, 0, 9, 'tedpoatsy'),
+    (2, 0, 10, 'rtrunck'),
+    (2, 0, 11, 'Laura Poatsy'),
+    (3, 0, 1, 'Cole Capsalis'),
+    (3, 0, 2, 'Chip M'),
+    (3, 0, 3, 'kseniya'),
+    (3, 0, 4, 'CharTheLatte'),
+    (3, 0, 5, 'TJ Bowen'),
+    (3, 0, 6, 'Jeremy Gustine'),
+    (3, 0, 7, 'Aaron Knoll'),
+    (3, 0, 8, 'Adam Oliver'),
+    (3, 0, 9, 'tedpoatsy'),
+    (3, 0, 10, 'rtrunck'),
+    (3, 0, 11, 'Laura Poatsy'),
+    (4, 0, 1, 'Cole Capsalis'),
+    (4, 0, 2, 'Chip M'),
+    (4, 0, 3, 'kseniya'),
+    (4, 0, 4, 'CharTheLatte'),
+    (4, 0, 5, 'TJ Bowen'),
+    (4, 0, 6, 'Jeremy Gustine'),
+    (4, 0, 7, 'Aaron Knoll'),
+    (4, 0, 8, 'Adam Oliver'),
+    (4, 0, 9, 'tedpoatsy'),
+    (4, 0, 10, 'rtrunck'),
+    (4, 0, 11, 'Laura Poatsy'),
+    (5, 0, 1, 'Cole Capsalis'),
+    (5, 0, 2, 'Chip M'),
+    (5, 0, 3, 'kseniya'),
+    (5, 0, 4, 'CharTheLatte'),
+    (5, 0, 5, 'TJ Bowen'),
+    (5, 0, 6, 'Jeremy Gustine'),
+    (5, 0, 7, 'Aaron Knoll'),
+    (5, 0, 8, 'Adam Oliver'),
+    (5, 0, 9, 'tedpoatsy'),
+    (5, 0, 10, 'rtrunck'),
+    (5, 0, 11, 'Laura Poatsy'),
+    (6, 0, 1, 'Cole Capsalis'),
+    (6, 0, 2, 'Chip M'),
+    (6, 0, 3, 'kseniya'),
+    (6, 0, 4, 'CharTheLatte'),
+    (6, 0, 5, 'TJ Bowen'),
+    (6, 0, 6, 'Jeremy Gustine'),
+    (6, 0, 7, 'Aaron Knoll'),
+    (6, 0, 8, 'Adam Oliver'),
+    (6, 0, 9, 'tedpoatsy'),
+    (6, 0, 10, 'rtrunck'),
+    (6, 0, 11, 'Laura Poatsy'),
+    (7, 0, 1, 'Cole Capsalis'),
+    (7, 0, 2, 'Chip M'),
+    (7, 0, 3, 'kseniya'),
+    (7, 0, 4, 'CharTheLatte'),
+    (7, 0, 5, 'TJ Bowen'),
+    (7, 0, 6, 'Jeremy Gustine'),
+    (7, 0, 7, 'Aaron Knoll'),
+    (7, 0, 8, 'Adam Oliver'),
+    (7, 0, 9, 'tedpoatsy'),
+    (7, 0, 10, 'rtrunck'),
+    (7, 0, 11, 'Laura Poatsy'),
+    (8, 0, 1, 'Cole Capsalis'),
+    (8, 0, 2, 'Chip M'),
+    (8, 0, 3, 'kseniya'),
+    (8, 0, 4, 'CharTheLatte'),
+    (8, 0, 5, 'TJ Bowen'),
+    (8, 0, 6, 'Jeremy Gustine'),
+    (8, 0, 7, 'Aaron Knoll'),
+    (8, 0, 8, 'Adam Oliver'),
+    (8, 0, 9, 'tedpoatsy'),
+    (8, 0, 10, 'rtrunck'),
+    (8, 0, 11, 'Laura Poatsy'),
+    (9, 0, 1, 'Cole Capsalis'),
+    (9, 0, 2, 'Chip M'),
+    (9, 0, 3, 'kseniya'),
+    (9, 0, 4, 'CharTheLatte'),
+    (9, 0, 5, 'TJ Bowen'),
+    (9, 0, 6, 'Jeremy Gustine'),
+    (9, 0, 7, 'Aaron Knoll'),
+    (9, 0, 8, 'Adam Oliver'),
+    (9, 0, 9, 'tedpoatsy'),
+    (9, 0, 10, 'rtrunck'),
+    (9, 0, 11, 'Laura Poatsy'),
+    (10, 0, 1, 'Cole Capsalis'),
+    (10, 0, 2, 'Chip M'),
+    (10, 0, 3, 'kseniya'),
+    (10, 0, 4, 'CharTheLatte'),
+    (10, 0, 5, 'TJ Bowen'),
+    (10, 0, 6, 'Jeremy Gustine'),
+    (10, 0, 7, 'Aaron Knoll'),
+    (10, 0, 8, 'Adam Oliver'),
+    (10, 0, 9, 'tedpoatsy'),
+    (10, 0, 10, 'rtrunck'),
+    (10, 0, 11, 'Laura Poatsy');
+
 CREATE VIEW weekly_vote AS
 SELECT week, SUM(votes) as votes_in_week, user_id, name FROM
 (
@@ -960,3 +1081,19 @@ SELECT week, SUM(votes) as votes_in_week, user_id, name FROM
 	GROUP BY submission_id
 ) GROUP BY user_id, week
 ORDER BY week, votes_in_week desc, user_id;
+
+CREATE VIEW weekly_vote_cool AS
+SELECT A.week, A.votes_in_week, A.user_id, A.name
+FROM weekly_vote_default A
+LEFT JOIN weekly_vote B
+     ON A.week = B.week and A.user_id=B.user_id
+WHERE B.week IS NULL and B.user_id IS NULL
+UNION
+SELECT * FROM weekly_vote
+ORDER BY week, votes_in_week DESC, user_id;
+
+CREATE VIEW weekly_ranking AS
+SELECT week, name, votes_in_week, SUM(votes_in_week)
+OVER (PARTITION BY user_id ORDER BY user_id ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) AS running_score
+FROM weekly_vote_cool
+ORDER BY week, running_score DESC;
