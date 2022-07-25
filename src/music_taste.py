@@ -20,6 +20,7 @@ corr = df.corr(method='pearson')
 
 # print(corr)
 
+ax = plt.axes()
 sb.heatmap(corr,
     xticklabels=corr.columns,
     yticklabels=corr.columns,
@@ -27,6 +28,7 @@ sb.heatmap(corr,
     annot=True,
     linewidth=0.5
 )
+ax.set_title('Similarity in Voting Behavior')
 plt.show()
 
 # https://stackoverflow.com/questions/1836352/similarity-between-users-based-on-votes
@@ -34,3 +36,4 @@ plt.show()
 # https://realpython.com/numpy-scipy-pandas-correlation-python/
 # https://pythontic.com/pandas/dataframe-computations/correlation
 # https://levelup.gitconnected.com/pearson-coefficient-of-correlation-using-pandas-ca68ce678c04
+# Should I try Euclidean distance? https://stackoverflow.com/questions/1836352/similarity-between-users-based-on-votes

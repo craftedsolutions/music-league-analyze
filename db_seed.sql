@@ -1143,7 +1143,8 @@ SELECT submission.id as submission_id, 9 as user_id, COALESCE(value, 0) as value
 LEFT OUTER JOIN vote ON vote.submission_id = submission.id and vote.user_id=9
 UNION ALL
 SELECT submission.id as submission_id, 10 as user_id, COALESCE(value, 0) as value FROM submission
-LEFT OUTER JOIN vote ON vote.submission_id = submission.id and vote.user_id=10
-UNION ALL
-SELECT submission.id as submission_id, 11 as user_id, COALESCE(value, 0) as value FROM submission
-LEFT OUTER JOIN vote ON vote.submission_id = submission.id and vote.user_id=11;
+LEFT OUTER JOIN vote ON vote.submission_id = submission.id and vote.user_id=10;
+-- Removed Laura since she never cast a vote. It made the chart look funny.
+--UNION ALL
+--SELECT submission.id as submission_id, 11 as user_id, COALESCE(value, 0) as value FROM submission
+--LEFT OUTER JOIN vote ON vote.submission_id = submission.id and vote.user_id=11;
