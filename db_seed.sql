@@ -960,7 +960,7 @@ CREATE TABLE weekly_vote_default (
 -- TODO: this should be able to be done better with a for loop
 INSERT INTO weekly_vote_default (week, votes_in_week, user_id, name)
 VALUES
-    -- week 0 is added here just to disambiguate between ties for the bump chart
+    -- week 0 is added here just to help with the bar chart race and bump chart
     (0, 0, 1, 'Cole Capsalis'),
     (0, 0, 2, 'Chip M'),
     (0, 0, 3, 'kseniya'),

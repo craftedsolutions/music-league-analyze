@@ -127,3 +127,9 @@ pipenv install <package>
 ```
 pipenv shell
 ```
+
+##### Run script
+
+```
+python src/generate_bar_chart_race.py
+```
