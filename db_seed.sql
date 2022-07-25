@@ -960,6 +960,17 @@ CREATE TABLE weekly_vote_default (
 -- TODO: this should be able to be done better with a for loop
 INSERT INTO weekly_vote_default (week, votes_in_week, user_id, name)
 VALUES
+    (0, 0, 1, 'Cole Capsalis'),
+    (0, -1, 2, 'Chip M'),
+    (0, -2, 3, 'kseniya'),
+    (0, -3, 4, 'CharTheLatte'),
+    (0, -4, 5, 'TJ Bowen'),
+    (0, -5, 6, 'Jeremy Gustine'),
+    (0, -6, 7, 'Aaron Knoll'),
+    (0, -7, 8, 'Adam Oliver'),
+    (0, -8, 9, 'tedpoatsy'),
+    (0, -9, 10, 'rtrunck'),
+    (0, -10, 11, 'Laura Poatsy'),
     (1, 0, 1, 'Cole Capsalis'),
     (1, 0, 2, 'Chip M'),
     (1, 0, 3, 'kseniya'),

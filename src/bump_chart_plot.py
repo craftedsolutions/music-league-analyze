@@ -1,3 +1,7 @@
+# code taken from here
+# https://stackoverflow.com/questions/68095438/how-to-make-a-bump-chart
+# https://github.com/kartikay-bagla/bump-plot-python
+
 import pandas as pd
 import matplotlib.pyplot as plt
 
@@ -48,6 +52,7 @@ def bumpchart(df, show_rank_axis=True, rank_axis_distance=1.1,
     for axis in axes:
         axis.invert_yaxis()
         axis.set_yticks(y_ticks)
+        axis.set_xticks(range(1, 11))
         axis.set_ylim((lines + 0.5, 0.5))
 
     # Sorting the labels to match the ranks.
