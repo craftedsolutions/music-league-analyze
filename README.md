@@ -50,6 +50,20 @@ inner join vote on vote.submission_id=submission.id
 where name='Jeremy Gustine';
 ```
 
+All of Jeremy's votes:
+```
+select * from vote
+inner join user on user.id=vote.user_id
+where name='Jeremy Gustine';
+```
+
+All of Jeremy's votes, with non-votes defaulting to 0:
+```
+SELECT COALESCE(value, 0) as value
+FROM submission
+LEFT OUTER JOIN vote ON vote.submission_id = submission.id AND vote.user_id = 6;
+```
+
 Jeremy's Friends and Enemies:
 ```
 select user.name, sum(value) as total_votes FROM
