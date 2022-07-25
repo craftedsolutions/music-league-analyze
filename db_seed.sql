@@ -1115,35 +1115,35 @@ FROM
 );
 
 CREATE VIEW all_votes_with_default AS
-SELECT 1 as user_id, COALESCE(value, 0) as value FROM submission
+SELECT submission.id as submission_id, 1 as user_id, COALESCE(value, 0) as value FROM submission
 LEFT OUTER JOIN vote ON vote.submission_id = submission.id and vote.user_id=1
 UNION ALL
-SELECT 2 as user_id, COALESCE(value, 0) as value FROM submission
+SELECT submission.id as submission_id, 2 as user_id, COALESCE(value, 0) as value FROM submission
 LEFT OUTER JOIN vote ON vote.submission_id = submission.id and vote.user_id=2
 UNION ALL
-SELECT 3 as user_id, COALESCE(value, 0) as value FROM submission
+SELECT submission.id as submission_id, 3 as user_id, COALESCE(value, 0) as value FROM submission
 LEFT OUTER JOIN vote ON vote.submission_id = submission.id and vote.user_id=3
 UNION ALL
-SELECT 4 as user_id, COALESCE(value, 0) as value FROM submission
+SELECT submission.id as submission_id, 4 as user_id, COALESCE(value, 0) as value FROM submission
 LEFT OUTER JOIN vote ON vote.submission_id = submission.id and vote.user_id=4
 UNION ALL
-SELECT 5 as user_id, COALESCE(value, 0) as value FROM submission
+SELECT submission.id as submission_id, 5 as user_id, COALESCE(value, 0) as value FROM submission
 LEFT OUTER JOIN vote ON vote.submission_id = submission.id and vote.user_id=5
 UNION ALL
-SELECT 6 as user_id, COALESCE(value, 0) as value FROM submission
+SELECT submission.id as submission_id, 6 as user_id, COALESCE(value, 0) as value FROM submission
 LEFT OUTER JOIN vote ON vote.submission_id = submission.id and vote.user_id=6
 UNION ALL
-SELECT 7 as user_id, COALESCE(value, 0) as value FROM submission
+SELECT submission.id as submission_id, 7 as user_id, COALESCE(value, 0) as value FROM submission
 LEFT OUTER JOIN vote ON vote.submission_id = submission.id and vote.user_id=7
 UNION ALL
-SELECT 8 as user_id, COALESCE(value, 0) as value FROM submission
+SELECT submission.id as submission_id, 8 as user_id, COALESCE(value, 0) as value FROM submission
 LEFT OUTER JOIN vote ON vote.submission_id = submission.id and vote.user_id=8
 UNION ALL
-SELECT 9 as user_id, COALESCE(value, 0) as value FROM submission
+SELECT submission.id as submission_id, 9 as user_id, COALESCE(value, 0) as value FROM submission
 LEFT OUTER JOIN vote ON vote.submission_id = submission.id and vote.user_id=9
 UNION ALL
-SELECT 10 as user_id, COALESCE(value, 0) as value FROM submission
+SELECT submission.id as submission_id, 10 as user_id, COALESCE(value, 0) as value FROM submission
 LEFT OUTER JOIN vote ON vote.submission_id = submission.id and vote.user_id=10
 UNION ALL
-SELECT 11 as user_id, COALESCE(value, 0) as value FROM submission
+SELECT submission.id as submission_id, 11 as user_id, COALESCE(value, 0) as value FROM submission
 LEFT OUTER JOIN vote ON vote.submission_id = submission.id and vote.user_id=11;
