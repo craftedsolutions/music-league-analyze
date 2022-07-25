@@ -8,7 +8,8 @@ import matplotlib.pyplot as plt
 
 def bumpchart(df, show_rank_axis=True, rank_axis_distance=1.1,
               ax=None, scatter=False, holes=False,
-              line_args={}, scatter_args={}, hole_args={}):
+              line_args={}, scatter_args={}, hole_args={},
+              index_name='', column_name='', value_name=''):
     if ax is None:
         left_yaxis = plt.gca()
     else:
@@ -53,6 +54,7 @@ def bumpchart(df, show_rank_axis=True, rank_axis_distance=1.1,
         axis.invert_yaxis()
         axis.set_yticks(y_ticks)
         axis.set_xticks(range(1, 11))
+        axis.set_xlabel(index_name)
         axis.set_ylim((lines + 0.5, 0.5))
 
     # Sorting the labels to match the ranks.
@@ -60,7 +62,9 @@ def bumpchart(df, show_rank_axis=True, rank_axis_distance=1.1,
     right_labels = df.iloc[-1].sort_values().index
 
     left_yaxis.set_yticklabels(left_labels)
+    left_yaxis.set_ylabel(column_name)
     right_yaxis.set_yticklabels(right_labels)
+    right_yaxis.set_ylabel(value_name)
 
     # Setting the position of the far right axis so that it doesn't overlap with the right axis
     if show_rank_axis:

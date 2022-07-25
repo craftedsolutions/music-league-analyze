@@ -21,6 +21,9 @@ bumpchart(
     scatter=True,
     holes=False,
     line_args={"linewidth": 5, "alpha": 0.5},
-    scatter_args={"s": 100, "alpha": 0.8}
+    scatter_args={"s": 100, "alpha": 0.8},
+    index_name='Week #',
+    column_name='Fighter Name',
+    value_name='Final Rank'
 )
 plt.show()
