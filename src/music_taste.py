@@ -29,6 +29,7 @@ sb.heatmap(corr,
     linewidth=0.5
 )
 ax.set_title('Similarity in Voting Behavior')
+plt.tight_layout()
 plt.show()
 
 # https://stackoverflow.com/questions/1836352/similarity-between-users-based-on-votes
