@@ -12,10 +12,10 @@ df = pd.read_sql_query(query, cnx)
 df.set_index(['week', 'name', 'votes_in_week', 'running_score'])
 
 # transform df so that rows are weeks, columns are names, and cells are the ranking
-ranking_data = df.pivot(index='week', columns='name', values='rank')
+ranking_data = df.pivot(index='week', columns='name', values='running_score')
 
 # get rid of row 0 (since that was added just for the bump chart)
-ranking_data = ranking_data.drop([0])
+# ranking_data = ranking_data.drop([0])
 
 # duplicate the first row since that bar_chart_race lib behaves strangely for the first row
 modified_ranking_data = ranking_data.head(1)
@@ -29,7 +29,7 @@ bcr.bar_chart_race(
     df=modified_ranking_data,
     filename='images/ranking_race.gif',
     orientation='h',
-    sort='asc',
+    sort='desc',
     n_bars=11,
     fixed_order=False,
     steps_per_period=20,
