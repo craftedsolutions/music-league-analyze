@@ -2,8 +2,8 @@
 
 ### Getting Started
 
-- Load the database: `sqlite3 MusicLeage.db < db_seed.sql`
-- Interact w/ the database: `sqlite3 MusicLeage.db`
+- Load the database: `sqlite3 MusicLeague.db < db_seed.sql`
+- Interact w/ the database: `sqlite3 MusicLeague.db`
 
 
 ### Useful Queries

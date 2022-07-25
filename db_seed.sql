@@ -1093,7 +1093,11 @@ SELECT * FROM weekly_vote
 ORDER BY week, votes_in_week DESC, user_id;
 
 CREATE VIEW weekly_ranking AS
-SELECT week, name, votes_in_week, SUM(votes_in_week)
-OVER (PARTITION BY user_id ORDER BY user_id ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) AS running_score
-FROM weekly_vote_cool
-ORDER BY week, running_score DESC;
+SELECT *, RANK() OVER (PARTITION BY week ORDER BY running_score desc) AS rank
+FROM
+(
+	SELECT week, name, votes_in_week, SUM(votes_in_week)
+	OVER (PARTITION BY user_id ORDER BY user_id ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) AS running_score
+	FROM weekly_vote_cool
+	ORDER BY week, running_score DESC
+);
