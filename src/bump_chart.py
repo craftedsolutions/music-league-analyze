@@ -1,7 +1,7 @@
 import sqlite3
 import pandas as pd
 import matplotlib.pyplot as plt
-from bump_chart_plot import bumpchart
+from lib.bump_chart_plot import bumpchart
 
 cnx = sqlite3.connect('MusicLeague.db')
 query = "select * from weekly_ranking"
