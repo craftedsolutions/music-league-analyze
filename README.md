@@ -2,7 +2,11 @@
 
 ### Getting Started
 
-- Load the database: `sqlite3 MusicLeague.db < db_seed.sql`
+- Install dependencies: `pipenv install`
+- Add a dependency: `pipenv install <package>`
+- Activate virtual environment: `pipenv shell`
+- Create the db schema: `sqlite3 MusicLeague.db < db_schema.sql && sqlite3 MusicLeague.db < db_views.sql`
+- Load the database w/ data: `USER='<username>' PASS='<password>' python src/loader/load_data.py`
 - Interact w/ the database: `sqlite3 MusicLeague.db`
 
 
@@ -122,28 +126,3 @@ ORDER BY week, running_score desc;
 - get genre data from spotify and search for correlations
 - how to visualize leaders over time? (bump chart) https://stackoverflow.com/questions/68095438/how-to-make-a-bump-chart
 
-### Python Analysis Scripts
-
-##### Install all dependencies
-
-```
-pipenv install
-```
-
-##### Add a dependency
-
-```
-pipenv install <package>
-```
-
-##### Activate the virtual environment
-
-```
-pipenv shell
-```
-
-##### Run script
-
-```
-python src/generate_bar_chart_race.py
-```
