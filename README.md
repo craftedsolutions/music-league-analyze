@@ -8,6 +8,8 @@
 - Create the db schema: `sqlite3 MusicLeague.db < db_schema.sql && sqlite3 MusicLeague.db < db_views.sql`
 - Load the database w/ data: `USER='<username>' PASS='<password>' python src/loader/load_data.py`
 - Interact w/ the database: `sqlite3 MusicLeague.db`
+- Generate a visualization: `python src/<script name>.py`
+- Generate a bar chart race: `sqlite3 MusicLeague.db < db_weekly.sql && python src/generate_bar_chart_race.py`
 
 
 ### Useful Queries

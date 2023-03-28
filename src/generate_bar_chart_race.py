@@ -30,7 +30,7 @@ bcr.bar_chart_race(
     filename='images/ranking_race.gif',
     orientation='h',
     sort='desc',
-    n_bars=11,
+    n_bars=13,
     fixed_order=False,
     steps_per_period=20,
     period_length=1000,
