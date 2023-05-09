@@ -63,7 +63,7 @@ def scrape_data(league_url):
         page.click('button:has-text("Next")')
         page.click('button:has-text("Agree")')
 
-        page.get_by_text('ROUND 12').wait_for()
+        page.get_by_text('ROUND 10').wait_for() # TODO: I need better text to wait for
         sibling_divs = page.query_selector_all('xpath=//h4[text()="Completed Rounds"]/following-sibling::div')
         sibling_divs.reverse()
         num_weeks = len(sibling_divs)
@@ -80,3 +80,14 @@ def scrape_data(league_url):
 
         browser.close()
         return data
+
+
+def scrape_data_all_leagues(league_urls):
+    leagues_data = {}
+    for league_num, league_url in enumerate(league_urls, 1):
+        scraped_data = scrape_data(league_url)
+        leagues_data[league_num] = {
+            'league_num': league_num,
+            'data': scraped_data
+        }
+    return leagues_data
