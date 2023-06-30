@@ -85,12 +85,12 @@ select * from (
 )
 UNION ALL
 select * from (
-    select 'nat9172' as user_name, user.name as voter_name, sum(value) as total_votes FROM
+    select 'Jeremy Gustine' as user_name, user.name as voter_name, sum(value) as total_votes FROM
     (
         select vote.user_id as voter_id, * from submission
         inner join user on user.id=submission.user_id
         inner join vote on vote.submission_id=submission.id
-        where name='nat9172'
+        where name='Jeremy Gustine'
     )
     inner join user on voter_id=user.id
     GROUP BY voter_id
@@ -98,12 +98,12 @@ select * from (
 )
 UNION ALL
 select * from (
-    select 'Cody Palmer' as user_name, user.name as voter_name, sum(value) as total_votes FROM
+    select 'Kyle Brill' as user_name, user.name as voter_name, sum(value) as total_votes FROM
     (
         select vote.user_id as voter_id, * from submission
         inner join user on user.id=submission.user_id
         inner join vote on vote.submission_id=submission.id
-        where name='Cody Palmer'
+        where name='Kyle Brill'
     )
     inner join user on voter_id=user.id
     GROUP BY voter_id
@@ -111,12 +111,12 @@ select * from (
 )
 UNION ALL
 select * from (
-    select 'jgracie6' as user_name, user.name as voter_name, sum(value) as total_votes FROM
+    select 'Aaron Knoll' as user_name, user.name as voter_name, sum(value) as total_votes FROM
     (
         select vote.user_id as voter_id, * from submission
         inner join user on user.id=submission.user_id
         inner join vote on vote.submission_id=submission.id
-        where name='jgracie6'
+        where name='Aaron Knoll'
     )
     inner join user on voter_id=user.id
     GROUP BY voter_id
@@ -124,12 +124,12 @@ select * from (
 )
 UNION ALL
 select * from (
-    select 'rtrunck' as user_name, user.name as voter_name, sum(value) as total_votes FROM
+    select 'Chip M' as user_name, user.name as voter_name, sum(value) as total_votes FROM
     (
         select vote.user_id as voter_id, * from submission
         inner join user on user.id=submission.user_id
         inner join vote on vote.submission_id=submission.id
-        where name='rtrunck'
+        where name='Chip M'
     )
     inner join user on voter_id=user.id
     GROUP BY voter_id
@@ -137,42 +137,16 @@ select * from (
 )
 UNION ALL
 select * from (
-select 'Aaron Knoll' as user_name, user.name as voter_name, sum(value) as total_votes FROM
+select 'James Hammond' as user_name, user.name as voter_name, sum(value) as total_votes FROM
 (
 	select vote.user_id as voter_id, * from submission
 	inner join user on user.id=submission.user_id
 	inner join vote on vote.submission_id=submission.id
-	where name='Aaron Knoll'
+	where name='James Hammond'
 )
 inner join user on voter_id=user.id
 GROUP BY voter_id
 order by total_votes desc
-)
-UNION ALL
-select * from (
-    select 'Adam Oliver' as user_name, user.name as voter_name, sum(value) as total_votes FROM
-    (
-        select vote.user_id as voter_id, * from submission
-        inner join user on user.id=submission.user_id
-        inner join vote on vote.submission_id=submission.id
-        where name='Adam Oliver'
-    )
-    inner join user on voter_id=user.id
-    GROUP BY voter_id
-    order by total_votes desc
-)
-UNION ALL
-select * from (
-    select 'TJ Bowen' as user_name, user.name as voter_name, sum(value) as total_votes FROM
-    (
-        select vote.user_id as voter_id, * from submission
-        inner join user on user.id=submission.user_id
-        inner join vote on vote.submission_id=submission.id
-        where name='TJ Bowen'
-    )
-    inner join user on voter_id=user.id
-    GROUP BY voter_id
-    order by total_votes desc
 )
 UNION ALL
 select * from (
@@ -202,12 +176,12 @@ select * from (
 )
 UNION ALL
 select * from (
-    select 'Chip M' as user_name, user.name as voter_name, sum(value) as total_votes FROM
+    select 'Adam Oliver' as user_name, user.name as voter_name, sum(value) as total_votes FROM
     (
         select vote.user_id as voter_id, * from submission
         inner join user on user.id=submission.user_id
         inner join vote on vote.submission_id=submission.id
-        where name='Chip M'
+        where name='Adam Oliver'
     )
     inner join user on voter_id=user.id
     GROUP BY voter_id
@@ -215,12 +189,51 @@ select * from (
 )
 UNION ALL
 select * from (
-    select 'Jeremy Gustine' as user_name, user.name as voter_name, sum(value) as total_votes FROM
+    select 'jgracie6' as user_name, user.name as voter_name, sum(value) as total_votes FROM
     (
         select vote.user_id as voter_id, * from submission
         inner join user on user.id=submission.user_id
         inner join vote on vote.submission_id=submission.id
-        where name='Jeremy Gustine'
+        where name='jgracie6'
+    )
+    inner join user on voter_id=user.id
+    GROUP BY voter_id
+    order by total_votes desc
+)
+UNION ALL
+select * from (
+    select 'nat9172' as user_name, user.name as voter_name, sum(value) as total_votes FROM
+    (
+        select vote.user_id as voter_id, * from submission
+        inner join user on user.id=submission.user_id
+        inner join vote on vote.submission_id=submission.id
+        where name='nat9172'
+    )
+    inner join user on voter_id=user.id
+    GROUP BY voter_id
+    order by total_votes desc
+)
+UNION ALL
+select * from (
+    select 'kseniya' as user_name, user.name as voter_name, sum(value) as total_votes FROM
+    (
+        select vote.user_id as voter_id, * from submission
+        inner join user on user.id=submission.user_id
+        inner join vote on vote.submission_id=submission.id
+        where name='kseniya'
+    )
+    inner join user on voter_id=user.id
+    GROUP BY voter_id
+    order by total_votes desc
+)
+UNION ALL
+select * from (
+    select 'rtrunck' as user_name, user.name as voter_name, sum(value) as total_votes FROM
+    (
+        select vote.user_id as voter_id, * from submission
+        inner join user on user.id=submission.user_id
+        inner join vote on vote.submission_id=submission.id
+        where name='rtrunck'
     )
     inner join user on voter_id=user.id
     GROUP BY voter_id
