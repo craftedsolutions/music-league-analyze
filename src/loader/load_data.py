@@ -4,10 +4,10 @@ from shaper import get_users, get_submissions, get_votes
 # from data import leagues_data
 
 league_urls = [
-    "https://app.musicleague.com/l/ed526a01c43c4ae887c04bbd65340f15/",
-    "https://app.musicleague.com/l/1c682077c3b04eab873f4c3aaca1e453/",
-    "https://app.musicleague.com/l/4a1fa40857bb41d197878e518b01a1a0/",
-    "https://app.musicleague.com/l/a800865de09e47aa9ca614a389bb8b06/"
+    "https://app.musicleague.com/l/17c57c65c14941a88d5ab3944c44785b/",
+    # "https://app.musicleague.com/l/1c682077c3b04eab873f4c3aaca1e453/",
+    # "https://app.musicleague.com/l/4a1fa40857bb41d197878e518b01a1a0/",
+    # "https://app.musicleague.com/l/a800865de09e47aa9ca614a389bb8b06/"
 ]
 leagues_data = scrape_data_all_leagues(league_urls)
 
