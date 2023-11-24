@@ -4,10 +4,14 @@ from shaper import get_users, get_submissions, get_votes
 # from data import leagues_data
 
 league_urls = [
-    "https://app.musicleague.com/l/17c57c65c14941a88d5ab3944c44785b/",
-    # "https://app.musicleague.com/l/1c682077c3b04eab873f4c3aaca1e453/",
-    # "https://app.musicleague.com/l/4a1fa40857bb41d197878e518b01a1a0/",
-    # "https://app.musicleague.com/l/a800865de09e47aa9ca614a389bb8b06/"
+    # keep in mind the CHAOS WEEKS could greatly skew results
+    "https://app.musicleague.com/l/ed526a01c43c4ae887c04bbd65340f15/", #first, 2Q22
+    "https://app.musicleague.com/l/1c682077c3b04eab873f4c3aaca1e453/", #3Q22
+    "https://app.musicleague.com/l/4a1fa40857bb41d197878e518b01a1a0/", #4Q22
+    "https://app.musicleague.com/l/a800865de09e47aa9ca614a389bb8b06/", #1Q23
+    "https://app.musicleague.com/l/17c57c65c14941a88d5ab3944c44785b/", #2Q23
+    "https://app.musicleague.com/l/a9e1e858e16f4cae98d3d9c06b6a4a0d/", #3Q23
+    # excluding the insane 4Q23 for now
 ]
 leagues_data = scrape_data_all_leagues(league_urls)
 
