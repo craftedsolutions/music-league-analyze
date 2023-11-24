@@ -6,6 +6,7 @@ import os
 def get_submission_data(entry, week_num):
     rows = entry.query_selector_all('xpath=./child::div')
     voter_rows = rows[2:]
+    link = rows[0].query_selector('xpath=//div[2]/div/div[1]/strong/a').get_attribute('href')
     song_title = rows[0].query_selector('xpath=//div[2]/div/div[1]/strong/a').inner_html()
     artist = rows[0].query_selector('xpath=//div[2]/div/div[1]/span[1]/span').inner_html()
     submitter = rows[1].query_selector('xpath=//div[2]/span').inner_html()
@@ -27,6 +28,7 @@ def get_submission_data(entry, week_num):
             })
     return {
         'week': week_num,
+        'link': link,
         'song_title': song_title,
         'artist': artist,
         'submitter': submitter,

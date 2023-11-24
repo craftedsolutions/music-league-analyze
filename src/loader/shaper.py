@@ -22,6 +22,7 @@ def get_submissions(db_users, leagues_data):
                     'league_num': league_num,
                     'week': week,
                     'artist': weekly_submission['artist'],
+                    'link': weekly_submission['link'],
                     'missed_deadline': int(weekly_submission['missed_deadline'])
                 })
     return submissions

@@ -24,13 +24,14 @@ def create_db_submissions(submissions):
     db_submissions = []
     for submission in submissions:
         c.execute(
-            "INSERT INTO submission (user_id, title, league_num, week, artist, missed_deadline) VALUES (?, ?, ?, ?, ?, ?)",
+            "INSERT INTO submission (user_id, title, league_num, week, artist, link, missed_deadline) VALUES (?, ?, ?, ?, ?, ?, ?)",
             (
                 submission['user_id'],
                 submission['title'],
                 submission['league_num'],
                 submission['week'],
                 submission['artist'],
+                submission['link'],
                 submission['missed_deadline']
             )
         )
@@ -42,6 +43,7 @@ def create_db_submissions(submissions):
             'league_num': submission['league_num'],
             'week': submission['week'],
             'artist': submission['artist'],
+            'link': submission['link'],
             'missed_deadline': submission['missed_deadline']
         })
     conn.commit()

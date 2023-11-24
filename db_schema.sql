@@ -10,6 +10,7 @@ CREATE TABLE submission (
     week INTEGER NOT NULL,
     artist TEXT NOT NULL,
     title TEXT NOT NULL,
+    link TEXT NOT NULL,
     missed_deadline INTEGER NOT NULL
 );
 
